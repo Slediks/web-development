@@ -16,7 +16,7 @@ BEGIN
       THEN 
         Count:= POS('&', Query)-Index
       ELSE
-        Count:= 100;
+        Count:= LENGTH(Query)-6;
       WRITELN('Hello dear, ', COPY(Query, Index, Count), '!')
     END
   ELSE
