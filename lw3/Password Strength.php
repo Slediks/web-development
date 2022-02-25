@@ -49,7 +49,8 @@ foreach ($arr as $value) {
 return $result;           
 }
 
-$password = $_GET('password');
+$password = $_GET["password"];
 echo CheckPassword($password);
+
 
 
