@@ -13,4 +13,6 @@ BEGIN
     IF Query = 'lanterns=2'
     THEN
       WRITELN('The British are coming by sea.')
+    ELSE
+      WRITELN('Sarah didn''t say.')
 END.
