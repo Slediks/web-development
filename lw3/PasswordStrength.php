@@ -2,13 +2,16 @@
 
 header('Content-Type: text/plain');
 
+function getParameter(string $key): ?string
+{
+	return isset($_GET[$key]) ? $_GET[$key] : null;
+}
 
 function CheckPassword($pass) {	
-$length = strlen($pass);
-
-if (preg_match('/[^[:alnum:]]/', $pass) || ($length < 1)) //RegEx
+if (($pass === '') || ($pass === null) || preg_match('/[^[:alnum:]]/', $pass)) //RegEx
 	return 'Wrong password';
 
+$length = strlen($pass);
 $result = 0;
 $numCount = 0;
 $upperCount = 0;
@@ -49,8 +52,7 @@ foreach ($arr as $value) {
 return $result;           
 }
 
-$password = $_GET["password"];
-echo CheckPassword($password);
+echo CheckPassword(getParameter('password'));
 
 
 
